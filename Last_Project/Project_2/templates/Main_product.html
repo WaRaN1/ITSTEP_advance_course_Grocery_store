@@ -69,13 +69,17 @@
     <table class="item">
         <tr>
             <td>
-                <a href="http://127.0.0.1:8000/category/{{ element.category.id }}/{{ element.id }}"
-                   class="icon-cont"><img src="data:image/jpg;base64,{{ element.icon.base64 }}" class="icon-table"></a>
-                <div class="name_product_table">
-                    {{ element.name }} {{ element.unit }}
+                <div class="cont_icon-cont">
+                    <a href="http://127.0.0.1:8000/category/{{ element.category.id }}/{{ element.id }}"
+                       class="icon-cont"><img src="data:image/jpg;base64,{{ element.icon.base64 }}" class="icon-table"></a>
                 </div>
-                <div>
-                    <b>{{ element.price }} ₴</b>
+                <div class="name_product_table_conteiner">
+                    <div class="name_product_table">
+                        {{ element.name }} {{ element.unit }}
+                    </div>
+                    <div>
+                        <b>{{ element.price }} ₴</b>
+                    </div>
                 </div>
             </td>
         </tr>
