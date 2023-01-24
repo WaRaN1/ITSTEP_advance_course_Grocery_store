@@ -1,0 +1,66 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block category %}
+
+<li><a href="http://127.0.0.1:8000/category/0">All categiries</a></li>
+
+{% for elem in category %}
+
+<li><a href="http://127.0.0.1:8000/category/{{ elem.id }}">{{ elem.name }}</a></li>
+
+{% endfor %}
+{% endblock %}
+
+
+{% block content %}
+<form method="post" action="https://www.portmone.com.ua/p2p" class="form-order">
+<div class="all">
+    <div class="order">
+        {% for elem in product_list %}
+        <div class="box">
+            <div class="img_in_box">
+                <a><img src="data:image/jpg;base64,{{ elem.base64 }}" class=""></a>
+            </div>
+            <div>
+                <p>{{ elem.name }}</p>
+                <hr>
+                <p>{{ elem.name_unit }}</p>
+                <p>₴ {{ elem.price }}</p>
+                <hr>
+                <p>Total:</p>
+                <p>{{ elem.count }} units</p>
+                <p>₴ {{ elem.prace_all }}</p>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+<div class="footer">
+    <div class="p_d">
+        <p>Price Details</p>
+    </div>
+    <div class="all_price">
+        <span>Price ({{ all_product }} items)</span>
+        <p>₴ {{ all_price }}</p>
+    </div>
+    <div class="line2">
+        <span>Delivery charges</span>
+        <p class="charges">Free</p>
+    </div>
+    <div class="clear">
+    </div>
+    <div class="line3">
+        <span>Total Amount</span>
+        <p>₴ {{ all_price }}</p>
+    </div>
+    <div class="clear">
+    </div>
+    <div class="line_final">
+        <button type="submit">Place Order</button>
+    </div>
+</div>
+</form>
+
+{% endblock %}
+

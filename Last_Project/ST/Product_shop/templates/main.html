@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+<!--    <link href="15.css" rel="stylesheet" type="text/css" >-->
+    <link type="text/css" href="{% static 'css/6.css' %}" rel="stylesheet"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+</head>
+  <body>
+    <nav>
+      <div class="navbar">
+        <div class="container nav-container">
+            <input class="checkbox" type="checkbox" name="" id="" />
+            <div class="hamburger-lines">
+              <span class="line line1"></span>
+              <span class="line line2"></span>
+              <span class="line line3"></span>
+            </div>
+          <div class="logo">
+              <a><input></a>
+              <a href="{% url 'register' %}">Sign up</a> | <a href="{% url 'login' %}">Login in</a>
+
+          </div>
+          <div class="menu-items">
+              <ul><img src="{% static 'icons/Cat.png' %}" alt="us name"><a href="#">Categories</a><hr></ul>
+              <ul><img src="{% static 'icons/Ord.png' %}" alt="us name"><a href="#">My orders</a></a></ul><hr>
+              <ul><img src="{% static 'icons/Buc.png' %}" alt="us name"><a href="#">My Bucket</a></a></ul><hr>
+              <ul><img src="{% static 'icons/Acc.png' %}" alt="us name"><a href="#">Your Account</a></a></ul><hr>
+              <br>
+              <ul><a href="#">Help Center</a></ul><hr>
+              <ul><a href="#">Privacy Policy</a></ul><hr>
+              <ul><a href="#">Legal</a></ul><hr>
+          </div>
+        </div>
+      </div>
+
+            {% block content %}
+
+            {% endblock %}
+
+    </nav>
+  <div>
+
+  </div>
+  </body>
+</html>

@@ -1,0 +1,27 @@
+{% extends 'home.html' %}
+{% load static %}
+{% block content %}
+
+
+
+  <form action="{% url 'login' %}" method="POST" class="form_reg">
+    <div>
+        <img src="{% static 'icons/Logo_product_shop_1.png' %}" alt="us name" class="img_logo">
+    </div>
+{% csrf_token %}
+    <div class="log_reg">
+    <label class="form-label" for="{{ form.id_username }}" >{{form.username.label }} </label>
+    <p class="p_char">{{ form.username }}</p>
+    <label class="form-label" for="{{ form.id_password }}" >{{form.password.label }} </label>
+    <p class="p_char">{{ form.password }}</p>
+
+    {% if form.errors %}
+    <p>{{ form.errors.error }}</p>
+    {% endif %}
+      </div>
+
+  <button type="submit" class="btn btn-success">Submit</button>
+    <p><a href="http://127.0.0.1:8000/category/0">Return to shopping</a></p>
+  </form>
+
+{% endblock %}

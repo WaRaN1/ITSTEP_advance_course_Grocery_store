@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block category %}
+{% for elem in category %}
+
+<li><a href="http://127.0.0.1:8000/category/{{ elem.id }}">{{ elem.name }}</a></li>
+
+{% endfor %}
+{% endblock %}
+
+{% block content %}
+<div class="all_add_form">
+    <form method="GET" action="http://127.0.0.1:8000/category/{{ cat }}" class="add_form">
+        <div class="icon-form">
+            <label><a><img src="data:image/jpg;base64,{{ info.icon.base64 }}"></a></label>
+            <p>{{ form.icon.base64 }}</p>
+        </div>
+        <div class="cont_info">
+            <div>
+                <label>{{ info.name }}</label>
+            </div>
+            <div>
+                <p>{{ info.price }} ₴ - {{ info.unit }}</p>
+            </div>
+            <div>
+                <label>{{ info.description }}</label>
+            </div>
+            <div>
+                <label>{{ form.count_all.label }}</label>
+                <input name="count_name" value="1" class="inp_block">
+            </div>
+            <div>
+                <div class="form_dis">
+                    <input name="id_product_add" value="{{ info.id }}">
+                </div>
+                <div class="btn_box">
+                    <button type="submit">Tuck</button>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+{% endblock %}

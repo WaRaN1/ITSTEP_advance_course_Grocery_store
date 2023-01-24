@@ -1,0 +1,331 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background-image: linear-gradient(0deg, white, white, lightgreen);
+  background-repeat: no-repeat;
+}
+
+.container {
+  margin: auto;
+/*  background-image: linear-gradient(90deg, white, lightgreen, lightgreen);*/
+}
+
+.navbar {
+  width: 100%;
+  box-shadow: 0 1px 4px rgb(146 161 176 / 15%);
+}
+
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 62px;
+  z-index: 5;
+}
+
+.navbar .menu-items {
+  display: flex;
+    background-image: linear-gradient(20deg, white, white, white, white, lightgreen);
+}
+
+.navbar .nav-container li {
+  list-style: none;
+}
+
+.navbar .nav-container a {
+  text-decoration: none;
+  color: #0e2431;
+  font-weight: 500;
+  font-size: 1.2rem;
+  padding: 0.7rem;
+}
+
+.navbar .nav-container a:hover{
+    font-weight: bolder;
+}
+
+.nav-container {
+  display: block;
+  position: relative;
+  height: 60px;
+}
+
+.nav-container .checkbox {
+  position: absolute;
+  display: block;
+  height: 32px;
+  width: 32px;
+  top: 20px;
+  left: 20px;
+  z-index: 5;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.nav-container .hamburger-lines {
+  display: block;
+  height: 26px;
+  width: 32px;
+  position: absolute;
+  top: 17px;
+  left: 20px;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.nav-container .hamburger-lines .line {
+  display: block;
+  height: 4px;
+  width: 100%;
+  border-radius: 10px;
+  background: #0e2431;
+}
+
+.nav-container .hamburger-lines .line1 {
+  transform-origin: 0% 0%;
+  transition: transform 0.4s ease-in-out;
+}
+
+.nav-container .hamburger-lines .line2 {
+  transition: transform 0.2s ease-in-out;
+}
+
+.nav-container .hamburger-lines .line3 {
+  transform-origin: 0% 100%;
+  transition: transform 0.4s ease-in-out;
+}
+
+.navbar .menu-items {
+  padding-top: 120px;
+  box-shadow: inset 0 0 2000px rgba(255, 255, 255, .5);
+  height: 100vh;
+  width: 25%;   /* Ширина випливаючого меню*/
+  transform: translate(-150%);
+  display: flex;
+  flex-direction: column;
+  margin-left: -40px;
+  padding-left: 50px;
+  transition: transform 0.5s ease-in-out;
+  text-align: left;
+  z-index: 10;
+}
+
+.logo {
+  position: absolute;
+  top: 5px;
+  right: 15px;
+  font-size: 1.2rem;
+  color: #0e2431;
+}
+
+.nav-container input[type="checkbox"]:checked ~ .menu-items {
+  transform: translateX(0);
+}
+
+.nav-container input[type="checkbox"]:checked ~ .hamburger-lines .line1 {
+  transform: rotate(45deg);
+}
+
+.nav-container input[type="checkbox"]:checked ~ .hamburger-lines .line2 {
+  transform: scaleY(0);
+}
+
+.nav-container input[type="checkbox"]:checked ~ .hamburger-lines .line3 {
+  transform: rotate(-45deg);
+}
+
+.nav-container input[type="checkbox"]:checked ~ .logo{
+  display: none;
+}
+.container nav-container{
+    background-color: red;
+}
+.icon-with{
+    height: 50px;
+}
+.icon-action{
+    width: 33%;
+}
+.button_cat{
+    background-color: Lime;
+    border: 0.5px solid white;
+    width: 10%;
+    height: 30px;
+}
+.button_add{
+    background-color: Lime;
+    width: 70%;
+    height:20px;
+    text-align: center;
+    border: 0.5px solid white;
+    border-radius: 4px;
+    bottom: 0;
+    position: relative;
+}
+.container_product {
+    display: flex;
+    overflow-x: scroll;
+    height: 25%;
+    scroll-snap-type: x mandatory;
+    border-radius: 8px;
+    gap: 12px;
+    background-color: white;
+    padding: 1%;
+}
+
+.container_product .item {
+    flex: 0 0 0;
+    border-radius: 8px;
+    scroll-snap-align: start;
+    border: 0.5px solid white;
+    box-shadow:0px 0px 3px 4px rgba(0,0,0,0.17);
+}
+.name_product_table{
+    font-size: small;
+
+}
+.cont_button_add {
+    left: 15%;
+    position: relative;
+}
+.category_menu{
+    display: flex;
+    align-items: center;
+}
+.ul_cat li{
+    display: none;
+}
+.ul_cat:hover li{
+    display: block;
+    margin-left: 20px;
+    border-bottom: 1px solid black;
+}
+.form_dis{
+    display: none;
+}
+.add_form {
+  display: flex;
+  width: 30%;
+  box-shadow: 0 1px 10px rgb(146 161 176 / 15%);
+  border 0.5 solid black;
+  background: white;
+  border-radius: 5px;
+  box-shadow: 0px 4px 25px -5px rgba(0,0,0,0.6);
+}
+.btn_box{
+    text-align: right;
+}
+.icon-form{
+    width: 50%;
+}
+.cont_info{
+    width: 50%;
+}
+.icon-form img{
+    height: 90%;
+}
+.icon-table{
+    width: 150px;
+}
+img{
+    100х111;
+}
+.inp_block{
+    width: 90%;
+}
+.btn_box{
+    position: relative;
+    right: 10%;
+}
+
+
+
+.order{
+    display: flex;
+    flex-wrap: wrap;
+    padding: 3%;
+}
+.box{
+    display: flex;
+    border: 0.5px solid white;
+    border-radius: 10px;
+    background-color: white;
+    width: 300px;
+    margin: 0.5%;
+    box-shadow: 0px 4px 25px -5px rgba(0,0,0,0.6);
+    flex-wrap: wrap;
+}
+.img_in_box{
+    padding: 5%;
+    width: 60%;
+}
+.p_d{
+    border-bottom: 0.5px solid grey;
+}
+.footer{
+    position: relative;
+    bottom: 0;
+    padding: 0 10px 0 10px;
+}
+.charges{
+    color: green;
+}
+.all_price{
+    overflow: hidden;
+}
+.all_price span{
+    display:block;
+    float:left;
+}
+.all_price p{
+    float:right;
+}
+.line2 span{
+    display:block;
+    float:left;
+}
+.line2 p{
+    float:right;
+}
+.line3 span{
+    display:block;
+    float:left;
+}
+.line3 p{
+    float:right;
+}
+.clear{
+    clear: both;
+    border-bottom: 0.5px solid grey;
+}
+.img_in_box img{
+    width: 120px;
+}
+.line_final button{
+    width: 200px;
+    height: 50px;
+    font-size: large;
+    border-radius: 5px;
+    border: 0.5px solid white;
+    color: white;
+    background: MediumSpringGreen;
+}
+.line_final{
+    margin: 50px;
+    float:right;
+    position: relative;
+    bottom: 0;
+}
+.all_add_form .add_form{
+    position: relative;
+    left: 35%;
+}

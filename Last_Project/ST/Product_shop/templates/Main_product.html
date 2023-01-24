@@ -1,0 +1,71 @@
+{% extends 'main.html' %}
+{% load static %}
+<!--    <link type="text/css" href="{% static 'css/main_product_1.css' %}" rel="stylesheet"/>-->
+<!--    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">-->
+{% block content %}
+
+<div class="category_menu">
+    <div>
+        <a>Category</a>
+    </div>
+    <div>
+    {% for element in category %}
+    <a href="#"><img src="data:image/jpg;base64,{{ element.icon.base64 }}" class="icon-with"></a>
+    {% endfor %}
+        </div>
+</div>
+<div>
+    <a href="#"><img src="{% static 'icons/Action.png' %}" class="icon-action"></a>
+    <a href="#"><img src="{% static 'icons/Action.png' %}" class="icon-action"></a>
+    <a href="#"><img src="{% static 'icons/Action.png' %}" class="icon-action"></a>
+</div>
+<div>
+    <button class="button_cat">Groceries>></button>
+</div>
+<div class="container_product">
+    {% for element in product_list %}
+    <table class="item">
+        <tr>
+            <td>
+                <a href="#"><img src="data:image/jpg;base64,{{ element.icon.base64 }}" class="icon-table"></a>
+                <div class="name_product_table">
+                    {{ element.name }} {{ element.unit }}
+                </div>
+                <div>
+                    <b>{{ element.price }} ₴</b>
+                </div>
+                <div class="cont_button_add">
+                    <button class="button_add">Add</button>
+                </div>
+            </td>
+        </tr>
+    </table>
+    {% endfor %}
+</div>
+
+<div>
+    <button class="button_cat">Groceries>></button>
+</div>
+
+<div class="container_product">
+    {% for element in product_list %}
+    <table class="item">
+        <tr>
+            <td>
+                <a href="#"><img src="data:image/jpg;base64,{{ element.icon.base64 }}" class="icon-table"></a>
+                <div class="name_product_table">
+                    {{ element.name }} {{ element.unit }}
+                </div>
+                <div>
+                    <b>{{ element.price }} ₴</b>
+                </div>
+                <div class="cont_button_add">
+                    <button class="button_add">Add</button>
+                </div>
+            </td>
+        </tr>
+    </table>
+    {% endfor %}
+</div>
+
+{% endblock %}

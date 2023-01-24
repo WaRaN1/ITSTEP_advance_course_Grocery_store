@@ -1,0 +1,79 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block category %}
+
+<li><a href="http://127.0.0.1:8000/category/0">All categiries</a></li>
+
+{% for elem in category %}
+
+<li><a href="http://127.0.0.1:8000/category/{{ elem.id }}">{{ elem.name }}</a></li>
+
+{% endfor %}
+{% endblock %}
+
+
+{% block content %}
+
+<div class="category_menu">
+    <div>
+        <a>Category: </a>
+    </div>
+    <div>
+    {% for element in category %}
+    <a href="http://127.0.0.1:8000/category/{{ element.id }}"><img src="data:image/jpg;base64,{{ element.icon.base64 }}" class="icon-with"></a>
+    {% endfor %}
+        </div>
+</div>
+<div>
+    <a href="#"><img src="{% static 'icons/Action.png' %}" class="icon-action"></a>
+    <a href="#"><img src="{% static 'icons/Action.png' %}" class="icon-action"></a>
+    <a href="#"><img src="{% static 'icons/Action.png' %}" class="icon-action"></a>
+</div>
+<div>
+    <button class="button_cat">Category>></button>
+</div>
+<div class="container_product">
+    {% for elem in cat_in_time %}
+    {% for element in elem %}
+    <table class="item">
+        <tr>
+            <td>
+                <a href="http://127.0.0.1:8000/category/{{ element.category.id }}/{{ element.id }}" class="icon-cont"><img src="data:image/jpg;base64,{{ element.icon.base64 }}" class="icon-table"></a>
+                <div class="name_product_table">
+                    {{ element.name }} {{ element.unit }}
+                </div>
+                <div>
+                    <b>{{ element.price }} ₴</b>
+                </div>
+            </td>
+        </tr>
+    </table>
+    {% endfor %}
+    {% endfor %}
+</div>
+<h1>{{ name }}</h1>
+
+<div>
+    <button class="button_cat">All Product>></button>
+</div>
+
+<div class="container_product">
+    {% for element in product_list %}
+    <table class="item">
+        <tr>
+            <td>
+                <a href="http://127.0.0.1:8000/category/{{ element.category.id }}/{{ element.id }}" class="icon-cont"><img src="data:image/jpg;base64,{{ element.icon.base64 }}" class="icon-table"></a>
+                <div class="name_product_table">
+                    {{ element.name }} {{ element.unit }}
+                </div>
+                <div>
+                    <b>{{ element.price }} ₴</b>
+                </div>
+            </td>
+        </tr>
+    </table>
+    {% endfor %}
+</div>
+
+{% endblock %}
